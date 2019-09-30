@@ -7,9 +7,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class MyModel implements Observable {
-
+//ИМЕННО ЗДЕСЬ важно указать тип переменных в List-e
     private List <Observer> observers;
-    private String enteredText;
+    private String myText;
 
 
     //в конструкторе создаем новый список наблюдателей
@@ -31,6 +31,13 @@ public class MyModel implements Observable {
     @Override
     public void notifyObservers() {
         for (Observer observer : observers)
-            observer.updateData(enteredText);
+            observer.updateViewData(myText);
+    }
+
+    @Override
+    public void changeData(String newEnteredText){
+        myText = newEnteredText;
+        //теперь обновим данные у наблюдателей
+        notifyObservers();
     }
 }

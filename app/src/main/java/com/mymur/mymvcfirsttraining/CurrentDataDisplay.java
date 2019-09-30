@@ -19,7 +19,7 @@ public CurrentDataDisplay(MyModel myModel, TextView textView) {
 
 //обновим текствью новыми данными из модели
     @Override
-    public void updateData(String enteredText) {
+    public void updateViewData(String enteredText) {
         textView.setText(enteredText);
     }
 }
