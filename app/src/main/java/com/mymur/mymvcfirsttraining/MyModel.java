@@ -2,7 +2,9 @@ package com.mymur.mymvcfirsttraining;
 
 //Класс будет как Модель данных
 
-import java.util.Iterator;
+import com.mymur.mymvcfirsttraining.interfaces.Observable;
+import com.mymur.mymvcfirsttraining.interfaces.Observer;
+
 import java.util.LinkedList;
 import java.util.List;
 

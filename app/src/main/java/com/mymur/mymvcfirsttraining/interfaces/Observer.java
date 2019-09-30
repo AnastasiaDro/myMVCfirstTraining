@@ -1,4 +1,4 @@
-package com.mymur.mymvcfirsttraining;
+package com.mymur.mymvcfirsttraining.interfaces;
 
 
 //интерфейс наблюдателя

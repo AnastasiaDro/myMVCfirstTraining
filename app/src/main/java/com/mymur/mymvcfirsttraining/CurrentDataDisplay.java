@@ -1,12 +1,13 @@
 package com.mymur.mymvcfirsttraining;
 
-import android.content.Context;
 import android.widget.TextView;
+
+import com.mymur.mymvcfirsttraining.interfaces.Observer;
 
 
 //Этот класс выступает как View
 
-public class CurrentDataDisplay implements Observer{
+public class CurrentDataDisplay implements Observer {
     MyModel myModel;
     TextView textView;
 

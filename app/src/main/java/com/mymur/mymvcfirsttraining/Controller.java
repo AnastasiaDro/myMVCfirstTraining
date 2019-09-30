@@ -5,6 +5,8 @@ package com.mymur.mymvcfirsttraining;
 //Это класс обработчика событий
 
 
+import com.mymur.mymvcfirsttraining.interfaces.ControllerInterface;
+
 public class Controller implements ControllerInterface {
 
     MyModel myModel;
@@ -17,7 +19,6 @@ public class Controller implements ControllerInterface {
     }
 
     //метод измнения данных в модели
-    //РАБОТАЕТ
     @Override
     public void updateModelData() {
         enteredText = inputText.getText().toString();
