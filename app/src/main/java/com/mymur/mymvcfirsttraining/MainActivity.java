@@ -9,7 +9,6 @@ import org.w3c.dom.Text;
 
 
 
-//мэйн будет выступать как модель
 public class MainActivity extends AppCompatActivity {
 
     TextView textView;
@@ -21,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         textView = findViewById(R.id.textView);
 
-        CurrentDataDisplay currentDataDisplay = new CurrentDataDisplay(textView);
+
 
 
     }

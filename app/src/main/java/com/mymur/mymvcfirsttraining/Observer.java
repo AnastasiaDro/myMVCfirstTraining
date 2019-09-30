@@ -6,5 +6,5 @@ package com.mymur.mymvcfirsttraining;
 import android.widget.TextView;
 
 public interface Observer {
-    void updateData(TextView textView);
+    void updateData(String enteredText);
 }
