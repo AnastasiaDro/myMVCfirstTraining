@@ -20,6 +20,7 @@ public class MyModel implements Observable {
     @Override
     public void registerObserver(Observer newObserver) {
         observers.add(newObserver);
+        System.out.println("Наблюдатель добавлен");
     }
 
     @Override
@@ -30,13 +31,18 @@ public class MyModel implements Observable {
     //метод обновляет данные методом "updateData" из класса-наблюдателя CurrentDataDisplay
     @Override
     public void notifyObservers() {
+
+        //РАБОТЕТ 1
         for (Observer observer : observers)
             observer.updateViewData(myText);
+        System.out.println("Это notifyObservers "+ myText);
     }
 
     @Override
+    //РАБОТЕТ 2
     public void changeData(String newEnteredText){
         myText = newEnteredText;
+        System.out.println("Это Model changeData "+ myText);
         //теперь обновим данные у наблюдателей
         notifyObservers();
     }

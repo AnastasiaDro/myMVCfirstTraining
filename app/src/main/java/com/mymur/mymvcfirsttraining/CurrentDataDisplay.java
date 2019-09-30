@@ -15,11 +15,13 @@ public class CurrentDataDisplay implements Observer{
 public CurrentDataDisplay(MyModel myModel, TextView textView) {
     this.myModel = myModel;
     this.textView = textView;
+    myModel.registerObserver(this);
 }
 
 //обновим текствью новыми данными из модели
     @Override
     public void updateViewData(String enteredText) {
         textView.setText(enteredText);
+        System.out.println("Это Current data display "+ enteredText);
     }
 }

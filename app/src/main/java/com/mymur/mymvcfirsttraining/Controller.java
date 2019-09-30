@@ -17,9 +17,11 @@ public class Controller implements ControllerInterface {
     }
 
     //метод измнения данных в модели
+    //РАБОТАЕТ
     @Override
     public void updateModelData() {
         enteredText = inputText.getText().toString();
         myModel.changeData(enteredText);
+        System.out.println("Это контроллер updateModelData" + enteredText);
     }
 }

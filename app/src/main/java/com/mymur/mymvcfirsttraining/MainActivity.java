@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.Layout;
 import android.text.method.KeyListener;
 import android.view.KeyEvent;
 import android.view.View;
@@ -22,9 +23,7 @@ public class MainActivity extends AppCompatActivity {
     MyModel myModel;
     CurrentDataDisplay display;
     Controller controller;
-    String enteredText;
-    KeyListener keyListener;
-    Context context;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,42 +36,11 @@ public class MainActivity extends AppCompatActivity {
         myModel = new MyModel();
         display = new CurrentDataDisplay(myModel, textView);
         controller = new Controller(myModel, inputText);
-        context  = this;
-
-
-       keyListener =  new KeyListener() {
-                    @Override
-                    public int getInputType() {
-                        return 0;
-                    }
-
-                    @Override
-                    public boolean onKeyDown(View view, Editable text, int keyCode, KeyEvent event) {
-                        if (event.getAction() == KeyEvent.ACTION_DOWN && keyCode == KeyEvent.KEYCODE_ENTER) {
-                            //Сохраняем введённый текст через метод контроллера
-                            controller.updateModelData();
-                            return true;
-                        }
-                        return false;
-                    }
-
-
-                    @Override
-                    public boolean onKeyUp(View view, Editable text, int keyCode, KeyEvent event) {
-                        return false;
-                    }
-
-                    @Override
-                    public boolean onKeyOther(View view, Editable text, KeyEvent event) {
-                        return false;
-                    }
-
-                    @Override
-                    public void clearMetaKeyState(View view, Editable content, int states) {
-                    }
-                };
-
-       setOnKeyListener( keyListener);
 
     }
+
+    public void onBtnOkClick(View view) {
+        controller.updateModelData();
+    }
+
 }
